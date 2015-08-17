@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+    <style>
+        .done-true {
+            text-decoration: line-through;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="app">
+        <h3>自定义控件</h3>
+        <tabs>
+            <pane title="Localization">
+                Date: {{ '2012-04-01' | date:'fullDate' }} <br>
+                Currency: {{ 123456 | currency }} <br>
+                Number: {{ 98765.4321 | number }} <br>
+            </pane>
+            <pane title="Pluralization">
+                <div ng-controller="BeerCounter">
+                    <div ng-repeat="beerCount in beers">
+                        <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
+                    </div>
+                </div>
+            </pane>
+        </tabs>
+
+        <br><br><br><br><br><br>
+
+        <h3>多个controller</h3>
+        <div ng-controller="TodoController">
+            <span>{{remaining()}} of {{todos.length}} remaining</span>
+            [ <a href="" ng-click="archive()">archive</a> ]
+            <ul class="unstyled">
+                <li ng-repeat="todo in todos">
+                    <input type="checkbox" ng-model="todo.done">
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+            <form ng-submit="addTodo()">
+                <input type="text" ng-model="todoText"  size="30"
+                       placeholder="add new todo here">
+                <input class="btn-primary" type="submit" value="add">
+            </form>
+        </div>
+    </div>
+    <div ng-app="like" ng-controller="likeController">
+
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script><!--框架-->
+<script src="js/index/index.module.js"></script><!--页面独立引入module, 合并module下的controller 和 directive等-->
+<script src="js/index/app.controller.js"></script>
+<script src="js/index/todo.controller.js"></script>
+
+<script src="js/common/components/components.module.js"></script>
+<script src="js/common/components/tabs.directive.js"></script>
+<script src="js/common/components/pane.directive.js"></script>
+
+
+<script src="js/common/like/like.module.js"></script>
+<script src="js/common/like/like.controller.js"></script>
+
+
+
+</body>
+</html>

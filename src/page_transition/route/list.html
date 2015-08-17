@@ -1,0 +1,10 @@
+<div id="list" class="pages">
+    <hr/>
+    <h3>Route : List.html</h3>
+
+    <ul>
+        <li ng-repeat="id in [1, 2, 3 ]">
+            <a ng-click="go('/list/'+id, 'slideLeft')"> ID{{ id }}</a>
+        </li>
+    </ul>
+</div>
