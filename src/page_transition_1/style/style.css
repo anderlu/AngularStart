@@ -114,7 +114,9 @@ a{
 .slideRight.ng-enter,
 .slideRight.ng-leave,
 .slideLeft.ng-enter,
-.slideLeft.ng-leave
+.slideLeft.ng-leave,
+.slideDown.ng-enter,
+.slideDown.ng-leave
 {
     /*transition-timing-function*/
     -webkit-transition-timing-function: ease;
