@@ -111,8 +111,10 @@ a{
 /* Transitions */
 
 /* Default Enter/Leave */
-.ng-enter,
-.ng-leave
+.slideRight.ng-enter,
+.slideRight.ng-leave,
+.slideLeft.ng-enter,
+.slideLeft.ng-leave
 {
     /*transition-timing-function*/
     -webkit-transition-timing-function: ease;
@@ -123,7 +125,7 @@ a{
     -webkit-transition-duration: 250ms;
     -moz-transition-duration: 250ms;
     -o-transition-duration: 250ms;
-    transition-duration: 3500ms;
+    transition-duration: 2500ms;
     /*transition-property*/
     -webkit-transition-property: opacity;
     -moz-transition-property: opacity;
